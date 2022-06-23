@@ -1,0 +1,30 @@
+.produkt {
+  list-style-type: none;
+}
+
+.product {
+  margin-top: 1rem;
+  border: 1px solid grey;
+  margin-bottom: 2rem;
+  border-radius: 0.1rem;
+  display: flex;
+  height: 250px;
+  padding: 1rem;
+  width: 80%;
+}
+
+.product img {
+  width: 20%;
+}
+.desc {
+  margin-left: 2rem;
+  height: 20px;
+}
+.name {
+  text-decoration: none;
+  margin-left: 2rem;
+}
+.searchsort {
+  margin-right: 2rem;
+  width: 10rem;
+}

@@ -1,0 +1,36 @@
+<section class="row">
+  <div class="col-3 searchsort">
+    <form>
+      <label for="search-prod">Search:</label>
+      <br />
+      <input type="search" [(ngModel)]="searchText" name="name" />
+    </form>
+    <form>
+      <label for="sort-prod">Sort by:</label>
+      <br />
+      <select id="selectid" (change)="sort($event)">
+        <option value="newest">Newest</option>
+        <option value="alphabetical">Alphabetical</option>
+      </select>
+    </form>
+  </div>
+  <div class="col">
+    <ul>
+      <li class="produkt"*ngFor="let product of products | filter: searchText">
+        <div class="product">
+          <img src="assets/{{ product.imageUrl }}" alt="" />
+          <ul>
+            <li class="produkt">
+              <a routerLink="/product/{{ product.id }}">
+                <h6>{{ product.name }}</h6>
+              </a>
+            </li>
+            <li class="produkt">
+              <p>{{ product.snippet }}</p>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
