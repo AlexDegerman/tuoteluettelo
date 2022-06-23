@@ -9,9 +9,9 @@ export class ProductService {
   constructor(private http: HttpClient) { }
   
   getProducts() {
-    return this.http.get("/assets/phones/phones.json");
+    return this.http.get("./assets/phones/phones.json");
   }
   getProduct(id: any) {
-    return this.http.get('assets/phones/' + id + '.json')
+    return this.http.get('./assets/phones/' + id + '.json')
   }
 }

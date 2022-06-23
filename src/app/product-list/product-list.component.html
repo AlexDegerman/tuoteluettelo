@@ -18,10 +18,10 @@
     <ul>
       <li class="produkt"*ngFor="let product of products | filter: searchText">
         <div class="product">
-          <img src="assets/{{ product.imageUrl }}" alt="" />
+          <img src="./assets/{{ product.imageUrl }}" alt="" />
           <ul>
             <li class="produkt">
-              <a routerLink="/product/{{ product.id }}">
+              <a class="name" routerLink="./product/{{ product.id }}">
                 <h6>{{ product.name }}</h6>
               </a>
             </li>
