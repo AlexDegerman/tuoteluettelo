@@ -1,0 +1,32 @@
+.smallimgview {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#bigimg {
+  width: 80%;
+  height: 80%;
+}
+.name {
+  border-bottom: 1px solid black;
+}
+.namedesc {
+  list-style-type: none;
+}
+.col{
+  list-style-type: none;
+}
+.smallimgview >* {
+  flex-basis: 33%;
+}
+
+.smallimgview img {
+  width: 80%;
+  height: auto;
+}
+.smallimg {
+  border: 2px solid black;
+  margin: 2rem;
+  margin-right: 2rem;
+}

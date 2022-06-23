@@ -1,0 +1,69 @@
+<section class="container">
+  <div class="row">
+    <div class="col">
+      <img
+        id="bigimg"
+        src="{{ 'assets/img/phones/' + productId + '.0.jpg' }}"
+        alt=""
+      />
+    </div>
+    <div class="col">
+      <ul class="namedesc">
+        <li>
+          <h2 class="name">{{ product.name }}</h2>
+        </li>
+        <li>{{ product.description }}</li>
+      </ul>
+      <div class="smallimgview">
+        <figure *ngFor="let img of product.images">
+          <img (click)="changeImg($event)" class="smallimg" src="{{ 'assets/' + img }}" alt="" />
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <ul class="col">
+      <li><h5>Availability and network</h5></li>
+      <li><h6>Availability</h6></li>
+      <li *ngFor="let avail of product.availability">{{ avail }}</li>
+    </ul>
+    <ul class="col">
+      <li><h5>Battery</h5></li>
+      <li><h6>Type</h6></li>
+      <li>{{ product.battery.type }}</li>
+      <li></li>
+      <li><h6>Talk Time</h6></li>
+      <li>{{ product.battery.talkTime }}</li>
+      <li><h6>Standby time (max)</h6></li>
+      <li>{{ product.battery.standbyTime }}</li>
+    </ul>
+    <ul class="col">
+      <li><h5>Storage and memory</h5></li>
+      <li><h6>RAM</h6></li>
+      <li>{{ product.storage.ram }}</li>
+      <li><h6>Internal Storage</h6></li>
+      <li>{{ product.storage.flash }}</li>
+    </ul>
+    <ul class="col">
+      <li><h5>Connectivity</h5></li>
+      <li><h6>Network support wifi</h6></li>
+      <li>{{ product.connectivity.wifi }}</li>
+      <li><h6>Bluetooth</h6></li>
+      <li>{{ product.connectivity.bluetooth }}</li>
+      <li><h6>Infrared</h6></li>
+      <li *ngIf="product.connectivity.infrared; else noInfra">
+        <fa-icon [icon]="check"></fa-icon>
+      </li>
+      <ng-template #noInfra>
+        <fa-icon [icon]="unCheck"></fa-icon>
+      </ng-template>
+      <li><h6>GPS</h6></li>
+      <li *ngIf="product.connectivity.gps; else noGps">
+        <fa-icon [icon]="check"></fa-icon>
+      </li>
+      <ng-template #noGps>
+        <fa-icon [icon]="unCheck"></fa-icon>
+      </ng-template>
+    </ul>
+  </div>
+</section>
